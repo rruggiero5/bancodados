@@ -1,0 +1,185 @@
+Criando procedures
+
+create table backup_tabelas.cargo select * from itau.cargo;
+create table backup_tabelas.clientes select * from itau.clientes;
+create table backup_tabelas.controle_horas select * from itau.controle_horas;
+create table backup_tabelas.funcionario select * from itau.funcionario;
+create table backup_tabelas.marcas select * from itau.marcas;
+create table backup_tabelas.produtos select * from itau.produtos;
+
+drop table backup_tabelas.cargo;
+drop table backup_tabelas.clientes;
+drop table backup_tabelas.controle_horas;
+drop table backup_tabelas.funcionario;
+drop table backup_tabelas.marcas;
+drop table backup_tabelas.produtos;
+
+
+
+
+Utilizando relacionamento de tabelas com Inner Join e  Left join
+
+select f.matricula,f.nome_funcionario,c.nome_cargo,c.valor_cargo
+from itau.cargo as c
+inner join itau.funcionario as f 
+on(f.cod_cargo=c.cod_cargo);
+
+select f.matricula,f.nome_funcionario,c.nome_cargo,c.valor_cargo
+from itau.cargo as c
+left join itau.funcionario as f 
+on(f.cod_cargo=c.cod_cargo);
+
+
+Criação das tabelas e inserção de registros para fazer Inner Join e Left Join 
+
+create table itau.cargo(
+cod_cargo char(2) not null,
+nome_cargo varchar(50) not null,
+valor_cargo decimal(8,2) not null,
+primary key (cod_cargo)
+);
+
+insert into itau.cargo
+(cod_cargo,nome_cargo,valor_cargo)
+values
+("C1","Analista de Sistemas",5250.00),
+("C2","DBA em Oracle",6850.00),
+("C3","Gerente Administrativo",4850.00),
+("C4","Estagiário - Jovem Aprendiz",1250.00);
+
+select * from itau.cargo;
+
+
+create table itau.funcionario(
+matricula int not null auto_increment,
+nome_funcionario varchar(50) not null,
+cod_cargo char(2) not null,
+primary key (matricula),
+foreign key (cod_cargo) references cargo(cod_cargo)
+);
+
+insert into itau.funcionario
+(nome_funcionario,cod_cargo)
+values
+("Michelle M. Dias","C2"),
+("Renato Campos","C1"),
+("Tigo Lopes","C3"),
+("Ricardo Silva","C2"),
+("Ricardo Alexandre","C3");
+
+
+
+
+insert into itau.produtos
+(nome_produto,valor_produto,cod_marca)
+values
+("Batedeira",128.99,1),
+("Fogão",1350.00,2),
+("Geladeira",1850.00,2),
+("Microondas",450.00,2),
+("Depurador de Ar",380.00,1),
+("Mixer",99.99,3);
+
+
+
+insert into itau.marcas
+(nome_marca)
+values
+("Walita"),
+("Brastemp"),
+("Cadence");
+
+
+
+
+Código do DBdesigner
+
+CREATE TABLE `Produtos` (
+	`Codigo_Produto` int NOT NULL AUTO_INCREMENT,
+	`Nome_Produto` varchar(50) NOT NULL,
+	`Valor_Produto` DECIMAL(8,2) NOT NULL,
+	`Cod_Marca` int NOT NULL,
+	PRIMARY KEY (`Codigo_Produto`)
+);
+
+CREATE TABLE `Marcas` (
+	`Codigo_Marca` int NOT NULL AUTO_INCREMENT,
+	`Nome_Marca` varchar(50) NOT NULL,
+	PRIMARY KEY (`Codigo_Marca`)
+);
+
+ALTER TABLE `Produtos` ADD CONSTRAINT `Produtos_fk0` FOREIGN KEY (`Cod_Marca`) REFERENCES `Marcas`(`Codigo_Marca`);
+
+
+
+Utilização da função Group By com Count e Sum
+
+SELECT 
+    genero,
+    SUM(quantidade_horas_trab * valor_hora) AS Tot_Sal_Dia
+FROM
+    itau.controle_horas
+GROUP BY genero
+ORDER BY genero;
+
+select count(*) as Total_Clientes from itau.clientes where idade_cliente in(20,30,40);
+
+SELECT 
+    idade_cliente, COUNT(*) AS Total_Clientes
+FROM
+    itau.clientes
+WHERE
+    idade_cliente IN (20 , 30, 40)
+GROUP BY idade_cliente;
+
+
+
+insert into itau.clientes
+(codigo_cliente,nome_cliente,cpf_cliente,idade_cliente,endereco_cliente,bairro_cliente,estado_cliente,agencia_cliente,conta_corrente_cliente,digito_verificador_cliente,telefone_contato_cliente,email_cliente,data_modificacao_registro_cliente)
+select codigo_cliente,nome_cliente,"atualizar",idade_cliente,endereco_cliente,"atualizar",estado_cliente,"0000","000000",0,"atualizar",email_cliente,now() from unibanco.clientes;
+
+
+
+create table itau.clientes(
+codigo_cliente int not null,
+nome_cliente varchar(50) not null,
+cpf_cliente char(11) not null,
+idade_cliente int(3) not null,
+endereco_cliente varchar(80) not null,
+bairro_cliente varchar(60) not null,
+estado_cliente char(2) not null,
+agencia_cliente char(4) not null,
+conta_corrente_cliente varchar(8) not null,
+digito_verificador_cliente int(1) not null,
+telefone_contato_cliente char(11) not null,
+email_cliente varchar(80) not null,
+data_modificacao_registro_cliente datetime,
+primary key (codigo_cliente,cpf_cliente)
+);
+
+
+
+-- create database itau;
+use itau;
+
+create table itau.clientes(
+codigo_cliente integer not null,
+nome_cliente varchar(50) not null,
+idade_cliente integer(3) not null,
+email_cliente varchar(80) not null,
+primary key (codigo_cliente)
+);
+
+-- describe itau.clientes;
+
+insert into itau.clientes
+(codigo_cliente,nome_cliente,idade_cliente,email_cliente)
+values
+(1,"Marcello Fernandes",25,"marcello.f@itau.com.br"),
+(2,"William Moraes",20,"william.m@itau.com.br"),
+(3,"Tiago Lopes Souza",18,"tiago.l@itau.com.br"),
+(4,"Renato Campos",22,"renato.c@itau.com.br");
+
+select * from itau.clientes order by nome_cliente;
+
+select nome_cliente,idade_cliente from itau.clientes order by nome_cliente;

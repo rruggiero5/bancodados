@@ -1,0 +1,842 @@
+------
+SQL
+-----
+
+create database itau;
+use itau;
+
+CREATE TABLE itau.clientes (
+    codigo_cliente INTEGER NOT NULL,
+    nome_cliente VARCHAR(50) NOT NULL,
+    idade_cliente INTEGER(3) NOT NULL,
+    email_cliente VARCHAR(80) NOT NULL,
+    PRIMARY KEY (codigo_cliente)
+);
+insert into itau.clientes
+(codigo_cliente,nome_cliente,idade_cliente,email_cliente)
+values
+(1,"Marcello Fernandes",25,"Marcelo.f@itau.com.br"),
+(2,"Wilian Moraes",20,"Willian@itau.com.br"),
+(3,"Thiago Souza",18,"Thiago.l@itau.com.br"),
+(4,"Renato Campos",22,"renato.c@itau.com.br");
+
+SELECT 
+    *
+FROM
+    itau.clientes
+ORDER BY nome_cliente;
+
+SELECT 
+    nome_cliente, idade_cliente
+FROM
+    itau.clientes
+ORDER BY nome_cliente;
+
+
+
+use itau;
+INSERT INTO `clientes` (`codigo_cliente`,`nome_cliente`,`idade_cliente`,`email_cliente`) VALUES (5,"Ivan Guzman",42,"(167) 848-5018"),(6,"Robert Y. Cummings",83,"(371) 370-1215"),(7,"Ali Copeland",40,"(604) 694-7675"),(8,"Christian Emerson",38,"(947) 705-2186"),(9,"Brett Clay",47,"(267) 816-5862"),(10,"Kimberley H. Mayo",34,"(832) 650-5619"),(11,"Melanie N. Sanchez",85,"(877) 689-7410"),(12,"Zephania A. Velez",67,"(730) 107-0889"),(13,"Tashya E. Trevino",39,"(837) 454-3734"),(14,"Rhonda D. Brennan",83,"(927) 267-7902");
+INSERT INTO `clientes` (`codigo_cliente`,`nome_cliente`,`idade_cliente`,`email_cliente`) VALUES (15,"Maya Greer",34,"(541) 361-6959"),(16,"Branden D. Lawrence",89,"(359) 984-8131"),(17,"Dylan Cline",85,"(236) 562-6450"),(18,"Maris G. Hodges",49,"(359) 941-6667"),(19,"Gray Buchanan",57,"(989) 394-6838"),(20,"Madison S. Bartlett",96,"(700) 187-5089"),(21,"Benedict Riggs",20,"(686) 572-4783"),(22,"Fletcher K. Rose",73,"(982) 829-1569"),(23,"Doris Mcmillan",80,"(633) 186-1724"),(24,"Stewart M. Valentine",46,"(753) 822-5936");
+INSERT INTO `clientes` (`codigo_cliente`,`nome_cliente`,`idade_cliente`,`email_cliente`) VALUES (25,"Whoopi D. Dickerson",61,"(783) 316-9498"),(26,"Summer U. Byrd",77,"(499) 977-8599"),(27,"Pamela S. Woodward",62,"(699) 168-5975"),(28,"Harper D. Hanson",46,"(944) 855-7482"),(29,"Karyn Z. Waters",98,"(319) 922-7033"),(30,"August R. Villarreal",45,"(933) 332-2905"),(31,"Carissa Dominguez",83,"(297) 747-7441"),(32,"Nomlanga I. Wilder",99,"(451) 576-4461"),(33,"Shaeleigh Bender",71,"(379) 824-9508"),(34,"Keiko Livingston",97,"(558) 120-3683");
+INSERT INTO `clientes` (`codigo_cliente`,`nome_cliente`,`idade_cliente`,`email_cliente`) VALUES (35,"Carly Burks",23,"(319) 757-8574"),(36,"Madeson Meyer",36,"(840) 171-8755"),(37,"Cadman Mitchell",20,"(506) 930-8325"),(38,"Abdul R. Norton",91,"(323) 565-0768"),(39,"Ulysses Randall",79,"(827) 272-1328"),(40,"Kyra Z. Wilcox",71,"(803) 851-3372"),(41,"Ria H. Dillon",63,"(563) 244-5531"),(42,"Adele S. Burns",41,"(658) 467-6894"),(43,"Dora M. Glenn",76,"(936) 173-8093"),(44,"Olga Y. Duran",37,"(633) 447-5099");
+INSERT INTO `clientes` (`codigo_cliente`,`nome_cliente`,`idade_cliente`,`email_cliente`) VALUES (45,"Uriel T. Guthrie",45,"(922) 244-8698"),(46,"Eve Y. Roth",24,"(634) 422-8183"),(47,"Shafira Beard",36,"(715) 290-3444"),(48,"Kendall Z. Ferguson",65,"(974) 277-0198"),(49,"Echo G. Spence",96,"(777) 673-9188"),(50,"Yen Fletcher",50,"(164) 805-9817"),(51,"Rooney S. Witt",44,"(195) 136-7739"),(52,"Castor H. Allison",95,"(852) 259-3276"),(53,"Desiree N. Howe",50,"(223) 576-7179"),(54,"Rebecca B. Camacho",58,"(773) 125-4511");
+INSERT INTO `clientes` (`codigo_cliente`,`nome_cliente`,`idade_cliente`,`email_cliente`) VALUES (55,"Rosalyn Q. Juarez",59,"(481) 767-8947"),(56,"Lavinia W. Hobbs",82,"(552) 113-2118"),(57,"Neve K. Small",43,"(681) 135-6884"),(58,"Jared O. Burch",86,"(647) 838-4409"),(59,"Keelie Grant",77,"(170) 451-7334"),(60,"Allistair Moss",93,"(285) 578-9494"),(61,"Addison G. Brady",22,"(685) 245-4711"),(62,"Kenneth Mcknight",32,"(313) 507-6295"),(63,"Sybill Clemons",98,"(425) 654-3789"),(64,"Jessica A. Cooper",90,"(472) 740-0719");
+INSERT INTO `clientes` (`codigo_cliente`,`nome_cliente`,`idade_cliente`,`email_cliente`) VALUES (65,"Kaseem Sanford",87,"(327) 389-5259"),(66,"Cassandra Dickson",28,"(859) 397-7096"),(67,"Zenia Q. Hurst",52,"(655) 547-8840"),(68,"Jolene Y. Becker",66,"(151) 997-3186"),(69,"Hedy O. Rivas",95,"(777) 502-1721"),(70,"Jayme Cantu",50,"(241) 473-8657"),(71,"Ingrid T. Cole",92,"(185) 922-0841"),(72,"Abel V. Mcgee",44,"(385) 722-8017"),(73,"Maisie Q. Holcomb",34,"(836) 604-9634"),(74,"Lance C. Bright",32,"(604) 686-1646");
+INSERT INTO `clientes` (`codigo_cliente`,`nome_cliente`,`idade_cliente`,`email_cliente`) VALUES (75,"Noelani D. Barron",70,"(176) 580-6700"),(76,"Moses Suarez",82,"(403) 860-4126"),(77,"Slade Morton",68,"(643) 973-9097"),(78,"Jenna Dyer",65,"(744) 104-6513"),(79,"Cara Y. Mccullough",25,"(168) 690-6133"),(80,"Hall Conway",87,"(947) 263-2755"),(81,"Knox T. Malone",23,"(447) 439-4097"),(82,"Hannah T. Vargas",81,"(932) 516-7471"),(83,"Buckminster M. Hoffman",55,"(323) 664-0209"),(84,"Elizabeth K. Phelps",48,"(593) 587-7073");
+INSERT INTO `clientes` (`codigo_cliente`,`nome_cliente`,`idade_cliente`,`email_cliente`) VALUES (85,"Hector C. Hurst",77,"(709) 705-5122"),(86,"Elton Z. Small",56,"(677) 680-8099"),(87,"Brent Sloan",43,"(250) 877-8606"),(88,"Jane H. Wheeler",48,"(351) 534-2825"),(89,"Bryar Richard",50,"(337) 552-1213"),(90,"Magee W. Ball",28,"(789) 836-8501"),(91,"Brenda K. Rutledge",36,"(992) 958-2611"),(92,"Morgan B. Franks",97,"(165) 967-7349"),(93,"Tiger P. Curtis",57,"(867) 376-6184"),(94,"Carolyn X. Mcgee",98,"(416) 170-2220");
+INSERT INTO `clientes` (`codigo_cliente`,`nome_cliente`,`idade_cliente`,`email_cliente`) VALUES (95,"Chastity Fields",87,"(448) 966-3637"),(96,"Ocean C. Shepherd",83,"(267) 511-1902"),(97,"Theodore Parrish",47,"(751) 476-1831"),(98,"Nerea Parker",57,"(519) 137-1664"),(99,"Duncan T. Gamble",77,"(511) 851-4674"),(100,"Linus D. Burks",46,"(189) 590-6950"),(101,"Paul Bray",86,"(794) 975-3951"),(102,"Ora Mendoza",57,"(250) 694-1826"),(103,"Kaitlin Christian",75,"(460) 434-4647"),(104,"Geoffrey Davidson",26,"(361) 885-4529");
+
+
+SELECT 
+    *
+FROM
+    itau.clientes
+WHERE
+    idade_cliente >= 18
+        AND idade_cliente <= 30
+ORDER BY idade_cliente;
+
+SELECT 
+    COUNT(*) AS Total_Registros
+FROM
+    itau.clientes
+WHERE
+    idade_cliente >= 18
+        AND idade_cliente <= 30
+ORDER BY idade_cliente;
+
+SELECT 
+    *
+FROM
+    itau.clientes
+WHERE
+    idade_cliente IN (20 , 30, 40)
+ORDER BY idade_cliente;
+
+SELECT 
+    *
+FROM
+    itau.clientes
+WHERE
+    codigo_cliente = 4;
+
+SELECT 
+    *
+FROM
+    itau.clientes
+WHERE
+    nome_cliente = 'Renato';
+SELECT 
+    *
+FROM
+    itau.clientes
+WHERE
+    nome_cliente LIKE 'Renato%';
+SELECT 
+    *
+FROM
+    itau.clientes
+WHERE
+    nome_cliente LIKE '%A.%';
+SELECT 
+    COUNT(*) AS Total_Registros
+FROM
+    itau.clientes
+WHERE
+    nome_cliente LIKE '%A.%';
+
+alter table itau.clientes add endereco varchar(60) not null;
+
+
+alter table itau.clientes rename column endereco_clientes to endereco_cliente;
+-- procedimento utilizado para alterar a estrutura do tipo de dados de um campo na tabela.
+alter table itau.clientes change endereco_cliente endereco_cliente varchar(80) not null;
+
+describe itau.clientes;
+
+SELECT 
+    *
+FROM
+    itau.clientes;
+
+UPDATE itau.clientes 
+SET 
+    endereco_cliente = 'Rua Tito'
+WHERE
+    codigo_cliente = 1;
+
+UPDATE itau.clientes 
+SET 
+    endereco_cliente = 'Atualizar campo endereço'
+WHERE
+    codigo_cliente >= 2;
+
+UPDATE itau.clientes 
+SET 
+    endereco_cliente = 'Atualizar campo endereço'
+WHERE
+    endereco_cliente <> 'Rua tito';
+
+alter table itau.clientes add estado_cliente char(2)  not null;
+
+UPDATE itau.clientes 
+SET 
+    estado_cliente = 'SP'
+WHERE
+    idade_cliente >= 18
+        AND idade_cliente <= 30;
+UPDATE itau.clientes 
+SET 
+    estado_cliente = 'xx'
+WHERE
+    estado_cliente = '';
+
+
+CREATE TABLE itau.bkp_clientes SELECT * FROM
+    itau.clientes;
+
+
+describe itau.bkp_clientes;
+
+
+DELETE FROM itau.clientes;
+
+insert into itau.clientes 
+(codigo_cliente,nome_cliente,idade_cliente,email_cliente,endereco_cliente,estado_cliente)
+select codigo_cliente,nome_cliente,idade_cliente,email_cliente,endereco_cliente,estado_cliente
+ from itau.clientes where idade_cliente>=50;
+
+SELECT 
+    *
+FROM
+    itau.clientes;
+    
+    
+create database unibanco;
+CREATE TABLE unibanco.clientes SELECT * FROM
+    itau.clientes;
+
+SELECT 
+    *
+FROM
+    unibanco.clientes;
+
+drop table itau.clientes;
+drop table itau.bkp_clientes;
+SELECT 
+    *
+FROM
+    itau.clientes;
+
+
+insert into itau.clientes
+(codigo_cliente,nome_cliente,cpf_cliente,idade_cliente,endereco_cliente,bairro_cliente,estado_cliente,agencia_cliente,conta_corrente_cliente,digito_verificador_cliente,telefone_contato_cliente,email_cliente,data_modificacao_registro_cliente)
+select codigo_cliente,nome_cliente,"atualizar",idade_cliente,endereco_cliente,"atualizar",estado_cliente,"0000","000000",0,"atualizar",email_cliente,now() from unibanco.clientes;
+
+
+
+create table itau.clientes(
+codigo_cliente int not null,
+nome_cliente varchar(50) not null,
+cpf_cliente char(11) not null,
+idade_cliente int(3) not null,
+endereco_cliente varchar(80) not null,
+bairro_cliente varchar(60) not null,
+estado_cliente char(2) not null,
+agencia_cliente char(4) not null,
+conta_corrente_cliente varchar(8) not null,
+digito_verificador_cliente int(1) not null,
+telefone_contato_cliente char(11) not null,
+email_cliente varchar(80) not null,
+data_modificacao_registro_cliente datetime,
+primary key (codigo_cliente,cpf_cliente)
+);
+ 
+ insert into itau.clientes
+(codigo_cliente,nome_cliente,idade_cliente,email_cliente)
+values
+(1,"Marcello Fernandes",25,"marcello.f@itau.com.br"),
+(2,"William Moraes",20,"william.m@itau.com.br"),
+(3,"Tiago Lopes Souza",18,"tiago.l@itau.com.br"),
+(4,"Renato Campos",22,"renato.c@itau.com.br");
+ 
+ select * from itau.clientes;
+ 
+ select table itau.controle_horas and a
+ 
+ create table itau.controle_horas(
+ cod_controlador int auto_increment,
+ nome_funcionario varchar(50) not null,
+ quantidade_horas_trab int(2) not null,
+ valor_hora decimal(8,2) not null,
+ primary key (cod_controlador)
+ );
+ 
+insert into itau.controle_horas
+(nome_funcionario, quantidade_horas_trab,valor_hora)
+values
+("Pedro da Silva",12,10.50),
+("Flamir da Silva",8,50.00),
+("Alberto José",12,11.50),
+("Andre Oliveira",17,12.50);
+
+select * from itau.controle_horas;
+
+SELECT 
+    nome_funcionario,
+    quantidade_horas_trab,
+    valor_hora,
+    (quantidade_horas_trab * valor_hora) AS Vl_Sal_dia
+FROM
+    itau.controle_horas;
+    
+alter table itau.controle_horas add genero varchar(20) not null;
+
+select * from itau.controle_horas;
+
+describe itau.controle_horas;
+
+update itau.controle_horas set genero="Masculino" where cod_controlador in (1,2,3,4);
+
+alter table itau.controle_horas drop genero;
+
+
+select genero, sum(quantidade_horas_trab*valor_hora) as Tot_Sal_dia from itau.controle_horas group by genero order by genero;
+
+insert into itau.controle_horas
+(cod_controlador,nome_funcionario, quantidade_horas_trab,valor_hora,genero)
+values
+(5,"Renata",17,12.50,"Feminino");
+
+
+
+use itau;
+
+
+CREATE TABLE `Produtos` (
+	`Codigo_Produto` int NOT NULL AUTO_INCREMENT,
+	`Nome_Produto` varchar(50) NOT NULL,
+	`Valor_Produto` DECIMAL(8,2) NOT NULL,
+	`Cod_Marca` int NOT NULL,
+	PRIMARY KEY (`Codigo_Produto`)
+);
+
+CREATE TABLE `Marcas` (
+	`Codigo_Marca` int NOT NULL AUTO_INCREMENT,
+	`Nome_Marca` varchar(50) NOT NULL,
+	PRIMARY KEY (`Codigo_Marca`)
+);
+
+ALTER TABLE `Produtos` ADD CONSTRAINT `Produtos_fk0` FOREIGN KEY (`Cod_Marca`) REFERENCES `Marcas`(`Codigo_Marca`);
+
+
+insert into itau.marcas
+(nome_marca)
+values
+("Walita"),
+("Cadence"),
+("Brastemp");
+
+insert into itau.produtos
+(nome_produto,valor_produto,cod_marca)
+values
+("Batedeira",128.89,1),
+("Fogao",222.89,2),
+("Geladeira",444.89,2),
+("Microondas",111.89,1),
+("Depurador de Ar",111.89,3);
+
+select * from itau.produtos
+
+use itau;
+
+select p.Nome_Produto,p.Valor_Produto,m.Nome_Marca
+from itau.produtos as p,
+itau.marcas as m
+where
+p.Cod_Marca=m.Codigo_Marca 
+}
+
+create table itau.cargo(
+cord_cargo char(2) not null,
+nome_cargo varchar(50) not null,
+valor_cargo decimal(8,2) not null,
+primary key (cod_cargo)
+);
+
+create table itau.funcionario(
+matrica int no null auto_increment,
+nome_funcionario varchar(50) not null,
+cod_cargo char(2) not null,
+primary key (matricula)
+
+
+
+
+
+
+
+-------------------------------------------
+AULA DE HTML
+------
+CONTATOS.HTML
+-----
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+    <link rel="stylesheet" href="..\css\biblioteca_estilos.css"
+</head>
+
+<body>
+    <table border="0" width="100%">
+        <tr>
+            <td align="center"> <a href="..\html\index.html"><img src="..\imagens\logo.png"></td>
+            <td align="center">QUEM SOMOS</td>
+            <td align="center">CURSOS ONLINE</td>
+            <td align="center">GAMA EXPERIENCE</td>
+            <td align="center">PARA EMPRESAS</td>
+            <td align="center"><a href="..\html\contatos.html">CONTATO</a></td>
+            <td align="center">CONTEUDO</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+
+    <div  align="center">
+    <form id="formuser" method="POST">
+<fieldset>
+    <legend align="center"> Para fazer um dos nossos cursos, preencha o nosso formulário</legend>
+        <label>Nome:</label><input type="text" name="nome" required><br><br>
+        <label>Email:</label><input type="email" name="email" required><br><br>
+        <label>Senha:</label><input type="password" name="senha" required><br><br>
+        <label>Data da realização do curso</label><input type="date" name="=cata_curso" required><br><br>
+        <label>Informe o Genero:</label>
+
+        <input type="radio" name="opcao_radio" value="Masculino" /> Masculino
+        <input type="radio" name="opcao_radio" value="Feminino" /> Feminino
+        <input type="radio" name="opcao_radio" value="Outros" /> Outros<br><br>
+
+        <label>Escolha o seu curso:</label>
+        <select>
+            <option value=""></option>
+            <option value="xml">XML</option>
+            <option value="xml">XML</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+
+            <Label>Qual periodo deseja fazer o curso</Label>    
+            <input type="checkbox" nome="OPCAO" value="manhã">Manhã
+            <input type="checkbox" nome="OPCAO" value="tarde">Tarde
+            <input type="checkbox" nome="OPCAO" value="noite">Noite<br><br>
+            <label>Anexar comprovante residência</label><input type="file" name="arquivo"><br><br>
+        </select>
+        <input type="submit" value="Enviar">
+
+    </fieldset>
+</div>
+    </form>
+
+
+</body>
+
+</html>
+
+
+
+-----
+JAVA.HTML
+-----
+
+Construindo uma página em JS
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+
+    <!-- chamada para criar CSS-->
+<style>
+
+</style>
+
+<!-- chamada para criar JS-->
+<script>
+//alert("Sejam bem vindos a Página de Java Script");
+var nome=prompt("Sejam bem vindos, entre com o seu nome ");
+alert("Muito prazer "+nome+" seja bem vindo a nossa página");
+
+function mensagem()
+{
+    alert("Nossa "+nome+ " como você é curioso");
+}
+
+
+function validar()
+{
+    var nome_formulario=formulario_cadastro.nome.value;
+    var email_formulario=formulario_cadastro.email.value;
+    var senha_formulario=formulario_cadastro.senha.value;
+
+    if(nome_formulario ==""){
+        alert("Preencha o campo obrigatório");
+        formulario_cadastro.nome.focus();
+        return false;
+    }
+
+    if(email_formulario =="" || email_formulario.indexOf('@')== -1){
+        alert("Preencha o campo email, utilizando um email válido");
+        formulario_cadastro.email.focus();
+        return false;
+
+    }
+
+
+
+    if(senha_formulario == "" || senha_formulario.length<=5){
+        alert ("Preencha o campo senha, poiis é obrigatório, com o mínimo de 6 digitos");
+        formulario_cadastro.senha.focus();
+        return false;
+
+    }
+
+    document.write("Muito obrigado "+nome_formulario+ " logo entraremos em contato: "+email_formulario);
+}
+
+
+</script>
+
+
+
+
+
+</head>
+<body>
+
+    <form id="formulario_cadastro" method="POST">
+        Nome: <input type="text" name="nome"><br><br>
+        Email: <input type="text" name="email"><br><br>
+        Senha: <input type="password" name="senha">
+        <input type="submit" onclick=" return validar()" value="enviar">
+    </form><br><br>
+
+
+<input type="button" onclick="mensagem()" value="Me click">
+
+
+</body>
+</html>
+
+
+
+
+
+
+-------
+FORMULARIO.HTML
+-------
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+
+    <!-- Chamada da biblioteca em CSS interna -->
+    <link rel="stylesheet" href="..\css\biblioteca_estilos.css">
+
+
+    <!-- Chamada da biblioteca em CSS do BootStrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <!-- Chamada da biblioteca em JS do BootStrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-3 div1">home</div>
+            <div class="col-lg-5 col-md-3 col-sm-3 div2">produtos</div>
+            <div class="col-lg-3 col-md-2 col-sm-3 div3">links</div>
+            <div class="col-lg-2 col-md-3 col-sm-3 div4">contatos</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 div1">coluna1</div>
+            <div class="col-lg-8 col-md-8 col-sm-8 div2">
+                <form id="formuser" method="POST">
+                    <fieldset>
+                        <legend align="center"> Para fazer um dos nossos cursos, preencha o nosso formulário</legend>
+                        <label>Nome:</label><input type="text" name="nome" required><br><br>
+                        <label>Email:</label><input type="email" name="email" required><br><br>
+                        <label>Senha:</label><input type="password" name="senha" required><br><br>
+                        <label>Data da realização do curso</label><input type="date" name="=cata_curso"
+                            required><br><br>
+                        <label>Informe o Genero:</label>
+
+                        <input type="radio" name="opcao_radio" value="Masculino" /> Masculino
+                        <input type="radio" name="opcao_radio" value="Feminino" /> Feminino
+                        <input type="radio" name="opcao_radio" value="Outros" /> Outros<br><br>
+
+                        <label>Escolha o seu curso:</label>
+                        <select>
+                            <option value=""></option>
+                            <option value="xml">XML</option>
+                            <option value="xml">XML</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+
+                            <Label>Qual periodo deseja fazer o curso</Label>
+                            <input type="checkbox" nome="OPCAO" value="manhã">Manhã
+                            <input type="checkbox" nome="OPCAO" value="tarde">Tarde
+                            <input type="checkbox" nome="OPCAO" value="noite">Noite<br><br>
+                            <label>Anexar comprovante residência</label><input type="file" name="arquivo"><br><br>
+                        </select>
+                        <input type="submit" value="Enviar">
+
+                    </fieldset>
+            </div>
+            </form>
+            <div class="col-lg-2 col-md-2 col-sm-2 div3">coluna3</div>
+        </div>
+        
+    </div>
+    </body>
+
+</html>
+
+
+------
+BOOTSTRAP.HTML
+------
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+
+    <!-- Chamada da biblioteca em CSS interna -->
+    <link rel="stylesheet" href="..\css\biblioteca_estilos.css">
+
+
+    <!-- Chamada da biblioteca em CSS do BootStrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <!-- Chamada da biblioteca em JS do BootStrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-3 div1">home</div>
+            <div class="col-lg-5 col-md-3 col-sm-3 div2">produtos</div>
+            <div class="col-lg-3 col-md-2 col-sm-3 div3">links</div>
+            <div class="col-lg-2 col-md-3 col-sm-3 div4">contatos</div>
+        </div>
+        <div class="row">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="..\imagens\banner1.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Primeiro Banner</h5>
+                      <p>Este foi o meu primeiro banner no paint</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="..\imagens\banner2.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Segundo Banner</h5>
+                      <p>Este foi o meu segunmdo banner no paint</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="..\imagens\banner3.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Terceiro Banner</h5>
+                      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+        </div>
+        <div class="row">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="..\imagens\banner1.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Curso de HTML</h5>
+                    <p class="card-text">HTML significa Hypertext Markup Language. Ele permite que os usuários criem e estruturem seções, parágrafos, cabeçalhos e links para páginas da internet ou aplicações. O HTML não é uma linguagem de programação, isso significa que não pode ser usado para criar funcionalidades dinâmicas.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..\imagens\banner2.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Curso de XML</h5>
+                    <p class="card-text">O XML, sigla para eXtensible Markup Language, é um tipo de linguagem de marcação que define regras para codificar diferentes documentos. É muito utilizado para a criação de Notas Fiscais Eletrônicas, também chamadas de NF-e, por armazená-las e ainda garantir uma assinatura digital.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="..\imagens\banner3.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Curso de CSS</h5>
+                    <p class="card-text">CSS é a sigla para o termo em inglês Cascading Style Sheets que, traduzido para o português, significa Folha de Estilo em Cascatas. O CSS é fácil de aprender e entender e é facilmente utilizado com as linguagens de marcação HTML ou XHTML.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+
+--------
+BIBLIOTECA_STYLOS.CSS
+--------
+
+    p{
+        font-size: 14px;
+        font-family: verdana;
+        color:green;
+    }
+    h3{
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: rgb(10, 58, 52);
+    }
+    h5{
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: rgb(226, 236, 235);
+    }
+    .menu{
+        font-size: 14px;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color:rgb(80, 4, 95);
+    }
+
+    body{
+        background-color:rgb(204, 190, 190);
+    }
+
+    .listas{
+        font-size: 12px;
+        color:yellow;
+
+    }
+
+    #formuser{
+        color:yellow;
+        background-color: yellowgreen;
+
+    }
+
+    label{
+        color:red;
+
+    }
+
+    .container{
+        border:3px solid red;
+        width: 500px;
+    }
+.div1{
+    background-color: yellow;
+}
+.div2{
+    background-color: violet;
+}
+.div3{
+    background-color:  green;
+}
+.div4{
+    background-color: blue;
+}
+
+
+
+
+
+
+--------
+INDEX.HTML
+--------
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gama Academy</title>
+    <link rel="stylesheet" href="..\css\biblioteca_estilos.css"
+    
+
+</head>
+
+<body>
+
+
+    <table border="0" width="100%" class="menu">
+        <tr>
+            <td align="center"><a href="..\html\index.html"><img src="..\imagens\logo.png"> </td>
+            <td align="center">QUEM SOMOS</td>
+            <td align="center">CURSOS ONLINE</td>
+            <td align="center">GAMA EXPERIENCE</td>
+            <td align="center">PARA EMPRESAS</td>
+            <td align="center"><a href="..\html\contatos.html">CONTATO</a></td>
+            <td align="center">CONTEUDO</td>
+        </tr>
+
+
+    </table>
+
+
+
+    <table border="0" cellpadding="10" cellspacing="5" width="100%">
+        <tr>
+            <td> <img src="..\imagens\imagem1.png"></td>
+            <td>
+                <p>As escolas tradicionais trabalham com metodologias que não conseguem
+                    suprir as novas demandas do mundo. Preparam profissionais que não são
+                    capazes de assumir vagas de emprego no mercado atual e, dificilmente,
+                    lidar com os avanços tecnológicos. Não falam sobre soft skills, habilidades
+                    altamente requisitadas. E não abordam a importância da multidisciplinaridade.</p>
+                <p>A <b><u>Gama Academy</b></u> forma profissionais com quatro características fundamentais:</p>
+
+                <ul type="square" class="listas">
+                    <li>Vontade de Aprender e Ensinar</li>
+                    <li>Soft Skills</li>
+                    <li>Mindset Empreendedor</li>
+                    <li>Inovação Criativa</li>
+                </ul>
+        </tr>
+    </table>
+
+    <div align="center">
+        <h3>Vídeo Institucional</h3>
+        <video controls=" autoplay=" true" width="400" height="300">
+            <source src="..\videos\gama.mp4" />
+        </video>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
